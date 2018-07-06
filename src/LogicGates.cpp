@@ -33,55 +33,29 @@
 #include <LogicGates.h>
 
 bool NotGate(bool param1){
-	if(param1==true){
-		return false;
-	}else if(param1==false){
-		return true;
-	}
+	return !param1;
 }
 
 bool AndGate(bool param1,bool param2){
-	if(param1==true&&param2==true){
-		return true;
-	}else{
-		return false;
-	}
+	return param1 & param2;
 }
 
 bool NandGate(bool param1,bool param2){
-	if(param1==true&&param2==true){
-		return false;
-	}else{
-		return true;
-	}
+	return !(param1 & param2);
 }
 
 bool OrGate(bool param1,bool param2){
-	if(param1==true||param2==true){
-		return true;
-	}else{
-		return false;
-	}
+	return param1 | param2;
 }
 
 bool NorGate(bool param1,bool param2){
-	if(param1==true||param2==true){
-		return false;
-	}else{
-		return true;
-	}
+	return !(param1 | param2);
 }
 
 bool XorGate(bool param1,bool param2){
-	bool x=NandGate(param1,param2);
-	bool y=OrGate(param1,param2);
-	bool z=AndGate(x,y);
-	return z;
+	return param1 ^ param2;
 }
 
 bool XnorGate(bool param1,bool param2){
-	bool x=NandGate(param1,param2);
-	bool y=OrGate(param1,param2);
-	bool z=NandGate(x,y);
-	return z;
+	return !(param1 ^ param2);
 }
